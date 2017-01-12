@@ -14,7 +14,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Hello World!"
+        android:text="Welcome!"
         android:id="@+id/textView" />
 
     <Button
@@ -23,4 +23,11 @@
         android:text="@string/button_start"
         android:onClick="startQuiz"
         android:layout_weight="1" />
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/button_add"
+        android:onClick="addPerson"
+        android:layout_weight="1" />
+
 </LinearLayout>

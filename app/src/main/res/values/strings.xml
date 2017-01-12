@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Name-App</string>
     <string name="button_start">Start</string>
+    <string name="button_add">Add</string>
+
+    <string name="addperson_text">Enter name</string>
 </resources>
