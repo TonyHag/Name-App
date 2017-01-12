@@ -2,16 +2,19 @@ package com.example.tony.name_app;
 
 import android.content.Context;
 
-import android.hardware.Camera;
+import android.hardware.*;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+
+import java.io.IOException;
 
 /**
  * Created by kimhe on 12.01.2017.
  */
 
 public class CameraPreview extends SurfaceView implements SurfaceHolder.Callback {
+    private static final String TAG = "LOL";
     private SurfaceHolder mHolder;
     private Camera mCamera;
 

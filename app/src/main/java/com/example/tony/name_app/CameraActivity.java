@@ -1,13 +1,13 @@
 package com.example.tony.name_app;
 
-        import android.graphics.Camera;
+        import android.hardware.camera2.*;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
         import android.widget.FrameLayout;
 
 public class CameraActivity extends AppCompatActivity {
 
-    private Camera mCamera;
+    private CameraDevice mCamera;
     private CameraPreview mPreview;
 
     @Override
