@@ -1,29 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_add_person"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+
     tools:context="com.example.tony.name_app.addPerson"
-    android:weightSum="1">
-    <EditText
-        android:background="#d3d3d3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/addperson_text"
-        android:freezesText="true"
-        android:layout_weight="1" />
+    android:weightSum="1"
+    android:orientation="vertical">
 
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="add"
-        android:text="@string/button_add"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="189dp">
+
+        <Button
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="add"
+            android:text="@string/button_add"
+            android:id="@+id/button_add"
+            android:layout_weight="1" />
+
+        <EditText
+            android:background="#d3d3d3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/addperson_text"
+            android:freezesText="true"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="299dp"
+            app:srcCompat="@android:drawable/alert_dark_frame"
+            android:id="@+id/bilde"
+
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_weight="1" />
+    </LinearLayout>
 
 
 </LinearLayout>
