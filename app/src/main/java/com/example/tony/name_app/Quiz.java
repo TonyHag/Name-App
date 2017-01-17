@@ -3,8 +3,10 @@ package com.example.tony.name_app;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class Quiz extends AppCompatActivity {
+import java.util.ArrayList;
 
+public class Quiz extends AppCompatActivity {
+    ArrayList<Person> persons;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

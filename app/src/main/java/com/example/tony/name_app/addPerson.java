@@ -31,6 +31,12 @@ public class addPerson extends AppCompatActivity {
         });
     }
 
+    public void add(){
+        String img ="";
+        String name ="";
+        int index = 0;
+        Person person = new Person(img, name, index);
+    }
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
 

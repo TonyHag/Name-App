@@ -14,7 +14,7 @@
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="189dp">
+        android:layout_height="120dp">
 
         <Button
 
@@ -22,34 +22,41 @@
             android:layout_height="wrap_content"
             android:onClick="add"
             android:text="@string/button_add"
-            android:id="@+id/button_add"
             android:layout_weight="1" />
 
         <EditText
+            android:id="@+id/name_input"
             android:background="#d3d3d3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/addperson_text"
-            android:freezesText="true"
+            android:inputType="text"
+            android:hint="@string/addperson_text"
+            android:imeOptions="actionDone"
             android:layout_weight="1" />
     </LinearLayout>
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="276dp">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="299dp"
             app:srcCompat="@android:drawable/alert_dark_frame"
             android:id="@+id/bilde"
-
             android:layout_row="1"
             android:layout_column="0"
             android:layout_weight="1" />
     </LinearLayout>
+    <Button
 
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/take_pic"
+        android:id="@+id/button_add"
+        android:layout_margin="70dp"
+        android:layout_weight="1" />
 
 </LinearLayout>
 
