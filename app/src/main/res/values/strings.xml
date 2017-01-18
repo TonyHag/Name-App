@@ -1,11 +1,9 @@
 <resources>
     <string name="app_name">Name-App</string>
-    <string name="button_listOfNames">List of Names</string>
-    <string name="button_pictureGallery">Picture Gallery</string>
-    <string name="button_learningMode">Learning Mode</string>
-
-    <string name="button_start">Start</string>
-    <string name="button_add">Add</string>
+    <string name="button_start">Ta Quiz</string>
+    <string name="button_add">Nytt ansikt</string>
     <string name="take_pic">Take picture</string>
     <string name="addperson_text">Enter name</string>
+    <string name="title_activity_gallery">Gallery</string>
+    <string name="title_activity_view_picture">ViewPicture</string>
 </resources>

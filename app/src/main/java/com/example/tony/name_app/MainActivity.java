@@ -21,4 +21,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, addPerson.class);
         startActivity(intent);
     }
+    public void gotoGallery(View view){
+        Intent intent = new Intent(this, Gallery.class);
+        startActivity(intent);
+    }
 }
