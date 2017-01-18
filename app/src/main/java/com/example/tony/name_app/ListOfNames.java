@@ -9,6 +9,7 @@ import com.example.tony.name_app.Person;
 
 public class ListOfNames extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
