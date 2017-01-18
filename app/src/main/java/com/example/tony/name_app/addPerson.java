@@ -48,8 +48,9 @@ public class addPerson extends AppCompatActivity {
         textTargetUri = (TextView)findViewById(R.id.targeturi);
         if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
             Bitmap photo = (Bitmap) data.getExtras().get("data");
-            imageView.setImageBitmap(photo);
 
+            imageView.setImageBitmap(photo);
+            MediaStore.Images.Media.insertImage(getContentResolver(), photo, "Pussyman" , "Tony i sitt habitat");
             //Henter filepath og viser under bilde i view
             Uri targetUri = data.getData();
             if(targetUri != null) {
