@@ -22,7 +22,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/btn_dialog"
+                android:src="@drawable/naty"
                 android:id="@+id/imageView"
                 android:layout_weight="1" />
 
@@ -46,7 +46,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/btn_dialog"
+                android:src="@drawable/tawny"
                 android:id="@+id/imageView2"
                 android:layout_weight="1" />
 
@@ -70,7 +70,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/btn_dialog"
+                android:src="@drawable/download"
                 android:id="@+id/imageView3"
                 android:layout_weight="1" />
 
