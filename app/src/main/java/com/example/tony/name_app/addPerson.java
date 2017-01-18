@@ -52,7 +52,9 @@ public class addPerson extends AppCompatActivity {
 
             //Henter filepath og viser under bilde i view
             Uri targetUri = data.getData();
-            textTargetUri.setText(targetUri.toString());
+            if(targetUri != null) {
+                textTargetUri.setText(targetUri.toString());
+            }
         }
     }
 
