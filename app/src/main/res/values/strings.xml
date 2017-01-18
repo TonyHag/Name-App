@@ -4,4 +4,6 @@
     <string name="button_add">Add</string>
     <string name="take_pic">Take picture</string>
     <string name="addperson_text">Enter name</string>
+    <string name="title_activity_gallery">Gallery</string>
+    <string name="title_activity_view_picture">ViewPicture</string>
 </resources>
