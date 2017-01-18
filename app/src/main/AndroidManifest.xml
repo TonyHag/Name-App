@@ -23,14 +23,8 @@
         </activity>
         <activity android:name=".Quiz" />
         <activity android:name=".addPerson" />
-        <activity
-            android:name=".Gallery"
-            android:label="@string/title_activity_gallery"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".ViewPicture"
-            android:label="@string/title_activity_view_picture"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".Gallery" />
+        <activity android:name=".ViewPicture"></activity>
     </application>
 
 </manifest>
