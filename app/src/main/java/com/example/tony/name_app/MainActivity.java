@@ -18,17 +18,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-     /*   Person person1 = new Person("@drawable/tawny", "Tony", 1);
-        Person person2 = new Person("@drawable/nawty", "Naty", 2);
-        persons.add(person1);
-        persons.add(person2);*/
+
+        initialize(this);
     }
 
     public void startListOfNames(View view) {
         Intent intent = new Intent(this, ListOfNames.class);
 
         //intent.putParcelableArrayListExtra("persons", persons);
-        initialize(this);
 
         startActivity(intent);
     }
