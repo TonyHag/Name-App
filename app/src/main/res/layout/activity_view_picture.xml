@@ -14,5 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
+        android:id="@+id/test"
         android:src="@mipmap/ic_launcher"/>
 </RelativeLayout>

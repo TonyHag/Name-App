@@ -1,11 +1,16 @@
 package com.example.tony.name_app;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+
+
 
 public class Gallery extends AppCompatActivity {
+
 
 
     @Override
@@ -16,5 +21,6 @@ public class Gallery extends AppCompatActivity {
     public void gotoPicture(View view){
         Intent intent = new Intent(this, ViewPicture.class);
         startActivity(intent);
+
     }
 }

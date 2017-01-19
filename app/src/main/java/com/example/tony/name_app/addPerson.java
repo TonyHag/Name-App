@@ -1,8 +1,10 @@
 package com.example.tony.name_app;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +23,8 @@ public class addPerson extends AppCompatActivity {
     private static final int CAMERA_REQUEST = 1888;
     private ImageView imageView;
     TextView textTargetUri;
-    List<Person> persons = new ArrayList<Person>();
+
+    public static List<Bitmap> persons = new ArrayList<Bitmap>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +59,8 @@ public class addPerson extends AppCompatActivity {
             Bitmap photo = (Bitmap) data.getExtras().get("data");
 
             imageView.setImageBitmap(photo);
-            MediaStore.Images.Media.insertImage(getContentResolver(), photo, "Pussyman" , "Tony i sitt habitat");
+
+            persons.add(photo);
             //Henter filepath og viser under bilde i view
             Uri targetUri = data.getData();
             if(targetUri != null) {
