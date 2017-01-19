@@ -15,13 +15,13 @@ public class ViewPicture extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_picture);
-
+        int index = getIntent().getIntExtra("index", 0);
 
         this.view = (ImageView) this.findViewById(R.id.test);
 
-        Bitmap photo = persons.get(0);
+        Bitmap photo = persons.get(index);
         view.setImageBitmap(photo);
         TextView name = (TextView) this.findViewById(R.id.name_img);
-        name.setText(names.get(0).toCharArray(), 0, names.get(0).length());
+        name.setText(names.get(index).toCharArray(), 0, names.get(index).length());
     }
 }

@@ -46,6 +46,14 @@ public class Gallery extends AppCompatActivity {
     }
     public void gotoPicture(View view){
         Intent intent = new Intent(this, ViewPicture.class);
+        switch (view.getId()) {
+            case R.id.img1:
+                intent.putExtra("index", 0);
+                break;
+            case R.id.img2:
+                intent.putExtra("index", 1);
+                break;
+        }
         startActivity(intent);
 
     }
