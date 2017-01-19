@@ -16,4 +16,9 @@
         android:layout_centerInParent="true"
         android:id="@+id/test"
         android:src="@mipmap/ic_launcher"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/name_img"
+        android:layout_centerHorizontal="true"/>
 </RelativeLayout>

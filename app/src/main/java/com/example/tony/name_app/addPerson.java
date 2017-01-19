@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -23,7 +24,7 @@ public class addPerson extends AppCompatActivity {
     private static final int CAMERA_REQUEST = 1888;
     private ImageView imageView;
     TextView textTargetUri;
-
+    public static List<String> names = new ArrayList<String>();
     public static List<Bitmap> persons = new ArrayList<Bitmap>();
 
     @Override
@@ -42,12 +43,11 @@ public class addPerson extends AppCompatActivity {
         });
     }
 
-    public void add(){
-
-        String img ="";
-        String name ="";
-        int index = 0;
-        //Person person = new Person(img, name, index);
+    public void add(View view){
+        EditText mEdit = (EditText)findViewById(R.id.name_input);
+        String name = mEdit.getText().toString();
+        names.add(name);
+        finish();
     }
 
     static final int REQUEST_IMAGE_CAPTURE = 1;
