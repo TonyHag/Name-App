@@ -1,6 +1,7 @@
 package com.example.tony.name_app;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,7 +24,22 @@ public class MainActivity extends AppCompatActivity {
 
     public void startListOfNames(View view) {
         Intent intent = new Intent(this, ListOfNames.class);
-        intent.putExtra("persons", persons);
+
+        Person person = new Person();
+        person.setName("Nataniel Pedersen");
+        person.setImgURI("//");
+        person.setIndex(0);
+
+        Person person2 = new Person();
+        person2.setName("Frank Leif");
+        person2.setImgURI("//");
+        person2.setIndex(1);
+
+        persons.add(person);
+        persons.add(person2);
+
+        intent.putParcelableArrayListExtra("persons", persons);
+
         startActivity(intent);
     }
 
