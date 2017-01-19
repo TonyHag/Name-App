@@ -13,10 +13,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class addPerson extends AppCompatActivity {
     private static final int CAMERA_REQUEST = 1888;
     private ImageView imageView;
     TextView textTargetUri;
+    List<Person> persons = new ArrayList<Person>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,7 @@ public class addPerson extends AppCompatActivity {
     }
 
     public void add(){
+
         String img ="";
         String name ="";
         int index = 0;

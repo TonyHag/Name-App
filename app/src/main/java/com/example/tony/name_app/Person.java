@@ -1,5 +1,6 @@
 package com.example.tony.name_app;
 
+import android.net.Uri;
 import android.os.Parcelable;
 import android.os.Parcel;
 
@@ -37,9 +38,11 @@ public class Person implements Parcelable {
         public Person createFromParcel(Parcel source) {
             Person person = new Person();
             person.name = source.readString();
+
             person.imgURI = source.readString();
             person.index = source.readInt();
             return person;
+
         }
         public Person[] newArray(int size) {
             return new Person[size];
