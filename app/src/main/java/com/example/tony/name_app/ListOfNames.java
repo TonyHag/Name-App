@@ -21,6 +21,10 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import com.example.tony.name_app.Person;
 
+import static com.example.tony.name_app.CatList.findUriFromName;
+import static com.example.tony.name_app.CatList.getList;
+import static com.example.tony.name_app.CatList.initialize;
+
 
 public class ListOfNames extends AppCompatActivity {
 
@@ -31,7 +35,8 @@ public class ListOfNames extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_of_names);
 
-        persons = getIntent().getParcelableArrayListExtra("persons");
+        persons = getList();
+        // getIntent().getParcelableArrayListExtra("persons");
 
         final ListView list = (ListView)findViewById(R.id.listView);
 
@@ -55,15 +60,14 @@ public class ListOfNames extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String itemValue = (String) list.getItemAtPosition(position);
 
-                showImage(itemValue);
+                Uri uri = findUriFromName(itemValue);
+
+                showImage(uri);
             }
         });
-
-
-
     }
 
-    public void showImage(String imageUri) {
+    public void showImage(Uri imageUri) {
         Dialog builder = new Dialog(this);
         builder.requestWindowFeature(Window.FEATURE_NO_TITLE);
         builder.getWindow().setBackgroundDrawable(
@@ -75,11 +79,10 @@ public class ListOfNames extends AppCompatActivity {
                 // nothing
             }
         });
-        //ImageView imageView = new ImageView(this);
-        //imageView.setImageURI(imageUri);
-        TextView text = new TextView(this);
-        text.setText(imageUri);
-        builder.addContentView(text, new RelativeLayout.LayoutParams(
+        ImageView imageView = new ImageView(this);
+        imageView.setImageURI(imageUri);
+
+        builder.addContentView(imageView, new RelativeLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT)
         );

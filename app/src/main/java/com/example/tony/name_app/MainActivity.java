@@ -8,6 +8,8 @@ import android.view.View;
 
 import java.util.ArrayList;
 
+import static com.example.tony.name_app.CatList.initialize;
+
 
 public class MainActivity extends AppCompatActivity {
     ArrayList<Person> persons = new ArrayList<Person>();
@@ -25,20 +27,8 @@ public class MainActivity extends AppCompatActivity {
     public void startListOfNames(View view) {
         Intent intent = new Intent(this, ListOfNames.class);
 
-        Person person = new Person();
-        person.setName("Nataniel Pedersen");
-        person.setImgURI("//");
-        person.setIndex(0);
-
-        Person person2 = new Person();
-        person2.setName("Frank Leif");
-        person2.setImgURI("//");
-        person2.setIndex(1);
-
-        persons.add(person);
-        persons.add(person2);
-
-        intent.putParcelableArrayListExtra("persons", persons);
+        //intent.putParcelableArrayListExtra("persons", persons);
+        initialize(this);
 
         startActivity(intent);
     }

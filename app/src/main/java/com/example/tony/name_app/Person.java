@@ -7,8 +7,17 @@ import android.os.Parcel;
 
 public class Person implements Parcelable {
     String name;
-    String imgURI;
+    Uri imgUri;
     int index;
+
+    public Person() {
+
+    }
+
+    public Person(String name, Uri imgUri) {
+        this.name = name;
+        this.imgUri = imgUri;
+    }
 
     public String getName() {
         return name;
@@ -18,12 +27,12 @@ public class Person implements Parcelable {
         this.name = name;
     }
 
-    public String getImgURI() {
-        return imgURI;
+    public Uri getImgURI() {
+        return imgUri;
     }
 
-    public void setImgURI(String imgURI) {
-        this.imgURI = imgURI;
+    public void setImgURI(Uri imgURI) {
+        this.imgUri = imgURI;
     }
 
     public int getIndex() {
@@ -38,8 +47,7 @@ public class Person implements Parcelable {
         public Person createFromParcel(Parcel source) {
             Person person = new Person();
             person.name = source.readString();
-
-            person.imgURI = source.readString();
+            person.imgUri = Uri.parse(source.readString());
             person.index = source.readInt();
             return person;
 
@@ -55,7 +63,7 @@ public class Person implements Parcelable {
 
     public void writeToParcel(Parcel parcel, int flags) {
         parcel.writeString(name);
-        parcel.writeString(imgURI);
+        parcel.writeString(imgUri.toString());
         parcel.writeInt(index);
     }
 
