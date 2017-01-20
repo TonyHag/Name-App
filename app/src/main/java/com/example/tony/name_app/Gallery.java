@@ -53,6 +53,16 @@ public class Gallery extends AppCompatActivity {
             case R.id.img2:
                 intent.putExtra("index", 1);
                 break;
+            case R.id.img3:
+                intent.putExtra("index", 2);
+                break;
+            case R.id.img4:
+                intent.putExtra("index", 3);
+                break;
+            case R.id.img5:
+                intent.putExtra("index", 4);
+                break;
+
         }
         startActivity(intent);
 
