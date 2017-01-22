@@ -48,9 +48,4 @@ public class LearningModeController {
             attempts++;
         }
     }
-
-    private Integer createRandom(Integer min, Integer max) {
-        Random rand = new Random();
-        return min + rand.nextInt((max - min) + 1);
-    }
 }
