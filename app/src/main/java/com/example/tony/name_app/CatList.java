@@ -55,4 +55,13 @@ public class CatList {
         
         return null;
     }
+    public static  Bitmap findBitmapFromName(String name){
+        for (Person cat : list) {
+            if (cat.getName().equals(name)) {
+                return cat.getBitmap();
+            }
+        }
+        return null;
+    }
+
 }

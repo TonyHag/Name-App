@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +22,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import com.example.tony.name_app.Person;
 
+import static com.example.tony.name_app.CatList.findBitmapFromName;
 import static com.example.tony.name_app.CatList.findUriFromName;
 import static com.example.tony.name_app.CatList.getList;
 import static com.example.tony.name_app.CatList.initialize;
@@ -60,14 +62,14 @@ public class ListOfNames extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String itemValue = (String) list.getItemAtPosition(position);
 
-                Uri uri = findUriFromName(itemValue);
-
-                showImage(uri);
+                //Uri uri = findUriFromName(itemValue);
+                Bitmap bitmap = findBitmapFromName(itemValue);
+                showImage(bitmap);
             }
         });
     }
 
-    public void showImage(Uri imageUri) {
+    public void showImage(Bitmap image) {
         Dialog builder = new Dialog(this);
         builder.requestWindowFeature(Window.FEATURE_NO_TITLE);
         builder.getWindow().setBackgroundDrawable(
@@ -80,7 +82,8 @@ public class ListOfNames extends AppCompatActivity {
             }
         });
         ImageView imageView = new ImageView(this);
-        imageView.setImageURI(imageUri);
+        imageView.setImageBitmap(image);
+        //imageView.setImageURI(imageUri);
 
         builder.addContentView(imageView, new RelativeLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,

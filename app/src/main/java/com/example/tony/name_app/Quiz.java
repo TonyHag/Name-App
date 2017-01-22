@@ -38,7 +38,8 @@ public class Quiz extends AppCompatActivity {
 
     public void updatePicture() {
         final ImageView imgview = (ImageView) findViewById(R.id.imageView);
-        imgview.setImageURI(game.imgUri);
+        //imgview.setImageURI(game.imgUri);
+        imgview.setImageBitmap(game.bitmap);
     }
 
     public void updateScore() {

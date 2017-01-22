@@ -1,6 +1,7 @@
 package com.example.tony.name_app;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.net.Uri;
 
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ public class LearningModeController {
     Person person;
     String correctName;
     Uri imgUri;
+    Bitmap bitmap;
 
     final ArrayList<Person> list;
 
@@ -35,7 +37,8 @@ public class LearningModeController {
 
         person = list.get(randomNumber);
         correctName = person.getName();
-        imgUri = person.getImgURI();
+        //imgUri = person.getImgURI();
+        bitmap = person.getBitmap();
     }
 
     public void checkAnswer(String name) {
