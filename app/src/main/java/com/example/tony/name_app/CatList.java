@@ -2,6 +2,7 @@ package com.example.tony.name_app;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.net.Uri;
 
 import java.util.ArrayList;
@@ -17,13 +18,13 @@ public class CatList {
     public static void initialize(Context context){
         list = new ArrayList<Person>();
 
-        Person cat1 = new Person("Runi", getUriToDrawable(context, R.drawable.download));
-        Person cat2 = new Person("Nati", getUriToDrawable(context, R.drawable.naty));
-        Person cat3 = new Person("Toni", getUriToDrawable(context, R.drawable.tawny));
+        Person cat1 = new Person("Runi", getUriToDrawable(context, R.drawable.download), null);
+        Person cat2 = new Person("Nati", getUriToDrawable(context, R.drawable.naty),null);
+        Person cat3 = new Person("Toni", getUriToDrawable(context, R.drawable.tawny),null);
 
-        list.add(cat1);
+       /** list.add(cat1);
         list.add(cat2);
-        list.add(cat3);
+        list.add(cat3);**/
     }
 
     public static Uri getUriToDrawable(Context context, int drawableId) {
@@ -39,9 +40,9 @@ public class CatList {
         return list;
     }
 
-    public static void addPerson(String name, Uri uri){
-        if(!name.isEmpty() || !uri.equals(null)) {
-            list.add(new Person(name, uri));
+    public static void addPersonToList(String name, Uri uri, Bitmap bitmap){
+        if(!name.isEmpty()/** && !uri.equals(null) || !bitmap.equals(null))**/ ) {
+            list.add(new Person(name, uri, bitmap));
         }
     }
 

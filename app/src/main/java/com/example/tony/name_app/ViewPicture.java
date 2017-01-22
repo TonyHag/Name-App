@@ -6,22 +6,25 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import static com.example.tony.name_app.addPerson.names;
-import static com.example.tony.name_app.addPerson.persons;
+import java.util.ArrayList;
+
+import static com.example.tony.name_app.CatList.getList;
+
 
 public class ViewPicture extends AppCompatActivity {
+    public ArrayList<Person> persons = new ArrayList<Person>();
     ImageView view;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_picture);
         int index = getIntent().getIntExtra("index", 0);
-
+        persons = getList();
         this.view = (ImageView) this.findViewById(R.id.test);
 
-        Bitmap photo = persons.get(index);
+        Bitmap photo = persons.get(index).getBitmap();
         view.setImageBitmap(photo);
         TextView name = (TextView) this.findViewById(R.id.name_img);
-        name.setText(names.get(index).toCharArray(), 0, names.get(index).length());
+        name.setText(persons.get(index).getName().toCharArray(), 0, persons.get(index).getName().length());
     }
 }

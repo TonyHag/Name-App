@@ -8,9 +8,7 @@ import java.util.Random;
 
 import static com.example.tony.name_app.CatList.getList;
 
-/**
- * Created by nataniel on 19.01.2017.
- */
+
 
 public class LearningModeController {
     Context context;

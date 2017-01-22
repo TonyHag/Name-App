@@ -1,5 +1,6 @@
 package com.example.tony.name_app;
 
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Parcelable;
 import android.os.Parcel;
@@ -9,15 +10,22 @@ public class Person implements Parcelable {
     String name;
     Uri imgUri;
     int index;
+    Bitmap bitmap;
+
+
 
     public Person() {
 
     }
 
-    public Person(String name, Uri imgUri) {
+    public Person(String name, Uri imgUri, Bitmap bitmap) {
         this.name = name;
         this.imgUri = imgUri;
+        this.bitmap = bitmap;
     }
+    public Bitmap getBitmap() {return bitmap;}
+
+    public void setBitmap(Bitmap bitmap) {this.bitmap = bitmap;}
 
     public String getName() {
         return name;

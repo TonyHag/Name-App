@@ -7,40 +7,44 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-import static com.example.tony.name_app.addPerson.persons;
+import java.util.ArrayList;
+
+import static com.example.tony.name_app.CatList.getList;
+
 
 public class Gallery extends AppCompatActivity {
 
 
-
+    public ArrayList<Person> persons = new ArrayList<Person>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gallery);
+        persons = getList();
         ImageView img1 = (ImageView) this.findViewById(R.id.img1);
         ImageView img2 = (ImageView) this.findViewById(R.id.img2);
         ImageView img3 = (ImageView) this.findViewById(R.id.img3);
         ImageView img4 = (ImageView) this.findViewById(R.id.img4);
         ImageView img5 = (ImageView) this.findViewById(R.id.img5);
         if(!persons.isEmpty()) {
-            Bitmap photo1 = persons.get(0);
+            Bitmap photo1 = persons.get(0).getBitmap();
             img1.setImageBitmap(photo1);
         }
         if(persons.size() >= 2) {
-            Bitmap photo2 = persons.get(1);
+            Bitmap photo2 = persons.get(1).getBitmap();
             img2.setImageBitmap(photo2);
         }
         if(persons.size() >= 3) {
-            Bitmap photo3 = persons.get(2);
+            Bitmap photo3 = persons.get(2).getBitmap();
             img3.setImageBitmap(photo3);
         }
         if(persons.size() >= 4) {
-            Bitmap photo4 = persons.get(3);
+            Bitmap photo4 = persons.get(3).getBitmap();
             img4.setImageBitmap(photo4);
         }
         if(persons.size() >= 5) {
-            Bitmap photo5 = persons.get(4);
+            Bitmap photo5 = persons.get(4).getBitmap();
             img5.setImageBitmap(photo5);
         }
     }

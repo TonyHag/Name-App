@@ -45,7 +45,7 @@ public class Quiz extends AppCompatActivity {
         imgview.setImageURI(game.imgUri);
     }
 
-    //Metode som oppdaterar tekstfelt med score og tal forsøk.
+    //Metode som oppdaterar tekstfelt med score og antall forsøk.
     public void updateScore(){
 
         String numCorrect = "Score: " + game.score;

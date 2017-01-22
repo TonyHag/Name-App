@@ -20,12 +20,13 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.example.tony.name_app.CatList.addPersonToList;
+
 public class addPerson extends AppCompatActivity {
     private static final int CAMERA_REQUEST = 1888;
     private ImageView imageView;
     TextView textTargetUri;
-    public static List<String> names = new ArrayList<String>();
-    public static List<Bitmap> persons = new ArrayList<Bitmap>();
+    Bitmap photo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +47,8 @@ public class addPerson extends AppCompatActivity {
     public void add(View view){
         EditText mEdit = (EditText)findViewById(R.id.name_input);
         String name = mEdit.getText().toString();
-        names.add(name);
+        //Person person = new Person(name, null, photo);
+        addPersonToList(name, null, photo);
         finish();
     }
 
@@ -56,11 +58,10 @@ public class addPerson extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         textTargetUri = (TextView)findViewById(R.id.targeturi);
         if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
-            Bitmap photo = (Bitmap) data.getExtras().get("data");
+            photo = (Bitmap) data.getExtras().get("data");
 
             imageView.setImageBitmap(photo);
 
-            persons.add(photo);
             //Henter filepath og viser under bilde i view
             Uri targetUri = data.getData();
             if(targetUri != null) {
