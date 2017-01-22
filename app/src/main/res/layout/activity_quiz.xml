@@ -28,13 +28,6 @@
         android:layout_gravity="center_horizontal"
         android:textSize="15sp" />
 
-    <TextView
-        android:id="@+id/attempts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:textSize="15sp"
-        />
 
     <LinearLayout
         android:layout_width="match_parent"

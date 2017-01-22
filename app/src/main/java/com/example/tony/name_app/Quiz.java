@@ -25,37 +25,26 @@ public class Quiz extends AppCompatActivity {
     }
 
     public void sendAnswer(View view) {
-        //Hentar inn svaret frå brukaren og nullar ut tekstfeltet
         EditText editText = (EditText) findViewById(R.id.edit_message);
         String message = editText.getText().toString();
         editText.setText("");
 
-        //Brukar spel-klassen til å sjekke svar og lage klart nytt bilete.
         game.checkAnswer(message);
         game.nextPicture();
 
-        //Oppdaterar view for bilete og tekst.
         updatePicture();
         updateScore();
     }
 
-    //Metode som legg inn bilete i imageView
-    public void updatePicture(){
+    public void updatePicture() {
         final ImageView imgview = (ImageView) findViewById(R.id.imageView);
         imgview.setImageURI(game.imgUri);
     }
 
-    //Metode som oppdaterar tekstfelt med score og tal forsøk.
-    public void updateScore(){
-
-        String numCorrect = "Score: " + game.score;
-        String numAttempts = "Attempts: " + game.attempts;
+    public void updateScore() {
+        String scoreAndAttempts = game.score + "/" + game.attempts;
 
         TextView score = (TextView) findViewById(R.id.score);
-        score.setText(numCorrect);
-
-        TextView attempts = (TextView) findViewById(R.id.attempts);
-        attempts.setText(numAttempts);
-
+        score.setText(scoreAndAttempts);
     }
 }
