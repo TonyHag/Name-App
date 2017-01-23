@@ -1,12 +1,9 @@
 package com.example.tony.name_app;
 
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.ColorDrawable;
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -17,15 +14,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import java.util.ArrayList;
-import com.example.tony.name_app.Person;
 
 import static com.example.tony.name_app.CatList.findBitmapFromName;
-import static com.example.tony.name_app.CatList.findUriFromName;
 import static com.example.tony.name_app.CatList.getList;
-import static com.example.tony.name_app.CatList.initialize;
 
 
 public class ListOfNames extends AppCompatActivity {
@@ -61,8 +54,6 @@ public class ListOfNames extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String itemValue = (String) list.getItemAtPosition(position);
-
-                //Uri uri = findUriFromName(itemValue);
                 Bitmap bitmap = findBitmapFromName(itemValue);
                 showImage(bitmap);
             }
@@ -72,23 +63,25 @@ public class ListOfNames extends AppCompatActivity {
     public void showImage(Bitmap image) {
         Dialog builder = new Dialog(this);
         builder.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        builder.getWindow().setBackgroundDrawable(
-                new ColorDrawable(android.graphics.Color.TRANSPARENT)
-        );
+        builder.getWindow().setBackgroundDrawable(new ColorDrawable(android.graphics.Color.TRANSPARENT));
+
         builder.setOnDismissListener(new DialogInterface.OnDismissListener() {
             @Override
             public void onDismiss(DialogInterface dialogInterface) {
-                // nothing
             }
         });
+
         ImageView imageView = new ImageView(this);
         imageView.setImageBitmap(image);
-        //imageView.setImageURI(imageUri);
+
+        imageView.setMinimumWidth(500);
+        imageView.setMinimumHeight(500);
 
         builder.addContentView(imageView, new RelativeLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT,
                 ViewGroup.LayoutParams.MATCH_PARENT)
         );
+
         builder.show();
     }
 }
