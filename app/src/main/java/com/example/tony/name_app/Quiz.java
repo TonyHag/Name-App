@@ -17,11 +17,16 @@ public class Quiz extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
-        
-        game = new LearningModeController(this);
-        game.nextPicture();
-        updatePicture();
-        updateScore();
+
+
+
+            game = new LearningModeController(this);
+        if(game.list.size() != 0) {
+            game.nextPicture();
+            updatePicture();
+            updateScore();
+        }
+
     }
 
     public void sendAnswer(View view) {
