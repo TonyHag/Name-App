@@ -48,3 +48,4 @@ public class Gallery extends AppCompatActivity {
     }
 
 }
+//Denne skal i oblig 2
