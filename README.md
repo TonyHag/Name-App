@@ -7,7 +7,7 @@ Det er 4 valg i hovedmenyen:
 * Learning mode
 * Add new
 
-List of names gir en oversikt over navnene der du kan klikke på navn for å få korresponderende bilde. 
-Picture Gallery gir en oversikt over bildene med navn. 
-LEarning mode er quiz
-Add new legger til et nytt ansikt fra kamera. 
+List of names gir en oversikt over navnene der du kan klikke på navn for å få korresponderende bilde.   
+Picture Gallery gir en oversikt over bildene med navn.   
+LEarning mode er quiz  
+Add new legger til et nytt ansikt fra kamera.   
