@@ -9,16 +9,16 @@ import java.util.Random;
 
 import static com.example.tony.name_app.CatList.getList;
 
-
-
 public class LearningModeController {
     Context context;
+
     Integer score;
     Integer attempts;
+
     Integer randomNumber;
+
     Person person;
     String correctName;
-    Uri imgUri;
     Bitmap bitmap;
 
     final ArrayList<Person> list;
@@ -31,16 +31,6 @@ public class LearningModeController {
         list = getList();
     }
 
-    public void nextPicture() {
-        Random r = new Random(System.currentTimeMillis());
-        randomNumber = r.nextInt(list.size());
-
-        person = list.get(randomNumber);
-        correctName = person.getName();
-        //imgUri = person.getImgURI();
-        bitmap = person.getBitmap();
-    }
-
     public void checkAnswer(String name) {
         if (correctName.toLowerCase().equals(name.toLowerCase())) {
             attempts++;
@@ -48,5 +38,14 @@ public class LearningModeController {
         } else {
             attempts++;
         }
+    }
+
+    public void nextPicture() {
+        Random r = new Random(System.currentTimeMillis());
+        randomNumber = r.nextInt(list.size());
+
+        person = list.get(randomNumber);
+        correctName = person.getName();
+        bitmap = person.getBitmap();
     }
 }

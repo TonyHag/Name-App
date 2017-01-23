@@ -11,17 +11,15 @@ import java.util.ArrayList;
 
 public class Quiz extends AppCompatActivity {
     LearningModeController game;
-    
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
 
+        game = new LearningModeController(this);
 
-
-            game = new LearningModeController(this);
-        if(game.list.size() != 0) {
+        if (game.list.size() > 0) {
             game.nextPicture();
             updatePicture();
             updateScore();
@@ -43,7 +41,6 @@ public class Quiz extends AppCompatActivity {
 
     public void updatePicture() {
         final ImageView imgview = (ImageView) findViewById(R.id.imageView);
-        //imgview.setImageURI(game.imgUri);
         imgview.setImageBitmap(game.bitmap);
     }
 

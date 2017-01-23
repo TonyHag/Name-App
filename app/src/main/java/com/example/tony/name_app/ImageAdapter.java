@@ -14,7 +14,6 @@ import java.util.ArrayList;
  */
 
 public class ImageAdapter extends ArrayAdapter<Person> {
-
     private Context context;
 
     public ImageAdapter(Context context, int resource, ArrayList<Person> objects) {
