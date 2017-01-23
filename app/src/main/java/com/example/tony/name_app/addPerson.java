@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Environment;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -78,9 +79,14 @@ public class addPerson extends AppCompatActivity {
            String path = saveToInternalStorage(photo);
            Log.d("MyActivity",path);
 
-          SharedPreferences y = getSharedPreferences("meep",0);
+            //Might be bollshit below this point
+            SharedPreferences shre = PreferenceManager.getDefaultSharedPreferences(this);
+            SharedPreferences.Editor edit=shre.edit();
+            edit.putString(path,"Nils");
+            edit.commit();
+            String n =  Boolean.toString(shre.contains(path));
 
-
+            Log.d("PISSINASS", n );
 
 
 
