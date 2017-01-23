@@ -3,6 +3,8 @@ package com.example.tony.name_app;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.view.Gravity;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -35,7 +37,14 @@ public class LearningModeController {
         if (correctName.toLowerCase().equals(name.toLowerCase())) {
             attempts++;
             score++;
+
+            Toast toast = Toast.makeText(this.context, R.string.right_answer, Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+            toast.show();
         } else {
+            Toast toast = Toast.makeText(this.context, R.string.wrong_answer, Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 0);
+            toast.show();
             attempts++;
         }
     }

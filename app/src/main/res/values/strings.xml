@@ -3,6 +3,8 @@
     <string name="button_listOfNames">List of Names</string>
     <string name="button_pictureGallery">Picture Gallery</string>
     <string name="button_learningMode">Learning Mode</string>
+    <string name="right_answer">Right answer</string>
+    <string name="wrong_answer">Wrong answer</string>
 
     <string name="button_start">Start</string>
     <string name="button_add">Add</string>
