@@ -62,11 +62,7 @@ public class addPerson extends AppCompatActivity {
 
             imageView.setImageBitmap(photo);
 
-            //Henter filepath og viser under bilde i view
-            Uri targetUri = data.getData();
-            if(targetUri != null) {
-                textTargetUri.setText(targetUri.toString());
-            }
+
         }
     }
 
