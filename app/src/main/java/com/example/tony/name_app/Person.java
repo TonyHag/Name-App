@@ -6,23 +6,20 @@ import android.os.Parcelable;
 import android.os.Parcel;
 
 
-public class Person implements Parcelable {
+public class Person {
     String name;
-    Uri imgUri;
     int index;
     Bitmap bitmap;
-
-
 
     public Person() {
 
     }
 
-    public Person(String name, Uri imgUri, Bitmap bitmap) {
+    public Person(String name, Bitmap bitmap) {
         this.name = name;
-        this.imgUri = imgUri;
         this.bitmap = bitmap;
     }
+
     public Bitmap getBitmap() {return bitmap;}
 
     public void setBitmap(Bitmap bitmap) {this.bitmap = bitmap;}
@@ -35,44 +32,12 @@ public class Person implements Parcelable {
         this.name = name;
     }
 
-    public Uri getImgURI() {
-        return imgUri;
-    }
-
-    public void setImgURI(Uri imgURI) {
-        this.imgUri = imgURI;
-    }
-
     public int getIndex() {
         return index;
     }
 
     public void setIndex(int index) {
         this.index = index;
-    }
-
-    public static final Parcelable.Creator<Person> CREATOR = new Creator<Person>() {
-        public Person createFromParcel(Parcel source) {
-            Person person = new Person();
-            person.name = source.readString();
-            person.imgUri = Uri.parse(source.readString());
-            person.index = source.readInt();
-            return person;
-
-        }
-        public Person[] newArray(int size) {
-            return new Person[size];
-        }
-    };
-
-    public int describeContents() {
-        return 0;
-    }
-
-    public void writeToParcel(Parcel parcel, int flags) {
-        parcel.writeString(name);
-        parcel.writeString(imgUri.toString());
-        parcel.writeInt(index);
     }
 
 }
