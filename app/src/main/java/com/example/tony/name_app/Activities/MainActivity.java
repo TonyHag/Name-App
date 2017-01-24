@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         View viewview = findViewById(R.id.activity_add_person);
 
-        if (id == R.id.mybutton) {
+        if (id == R.id.button_goto_add_person) {
             startaddPerson(viewview);
         }
         return super.onOptionsItemSelected(item);

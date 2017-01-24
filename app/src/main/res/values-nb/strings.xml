@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Name-App</string>
+    <string name="button_add_new">Legg til ny</string>
+    <string name="button_add_person">Legg til</string>
+    <string name="button_answer">Svar</string>
+    <string name="button_gallery">Fotogalleri</string>
+    <string name="button_learning_mode">Læringsmodus</string>
+    <string name="button_list_of_names">Navneliste</string>
+    <string name="button_start">Start</string>
+    <string name="button_take_picture">Ta bilde</string>
+    <string name="edit_text_answer_hint">Navn</string>
+    <string name="edit_text_name_hint">Skriv in navn</string>
+    <string name="right_answer">Riktig svar</string>
+    <string name="title_activity_gallery">Galleri</string>
+    <string name="title_activity_learning_mode">Læringsmodus</string>
+    <string name="title_activity_list_of_names">Navneliste</string>
+    <string name="title_activity_main">Navn App</string>
+    <string name="title_activity_view_picture">ViewPicture</string>
+    <string name="wrong_answer">Feil svar</string>
+</resources>
