@@ -14,7 +14,6 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:text="@string/button_list_of_names"
         android:onClick="startListOfNames"
         android:layout_weight="1" />
@@ -22,7 +21,6 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:text="@string/button_gallery"
         android:onClick="gotoGallery"
         android:layout_weight="1" />
@@ -30,7 +28,6 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:text="@string/button_learning_mode"
         android:onClick="startQuiz"
         android:layout_weight="1" />
