@@ -8,8 +8,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Random;
 
-import static com.example.tony.name_app.LocalDatabase.getList;
-
 public class GameEngine {
     Context context;
 
@@ -29,7 +27,7 @@ public class GameEngine {
         this.attempts = 0;
         this.context = context;
 
-        list = getList();
+        list = LocalDatabase.getList();
     }
 
     public void checkAnswer(String name) {

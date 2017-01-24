@@ -7,10 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.tony.name_app.LocalDatabase;
 import com.example.tony.name_app.R;
-
-import static com.example.tony.name_app.LocalDatabase.initialize;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         setTitle("Name App");
 
-        initialize(this);
+        LocalDatabase.initialize(this);
     }
 
     @Override
