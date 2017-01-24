@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * Created by nataniel on 19.01.2017.
  */
 
-public class CatList {
+public class LocalDatabase {
 
     private static ArrayList<Person> list;
 
@@ -32,16 +32,6 @@ public class CatList {
         list.add(cat2);
         list.add(cat3);
     }
-
-    public static Uri getUriToDrawable(Context context, int drawableId) {
-        return Uri.parse(
-                ContentResolver.SCHEME_ANDROID_RESOURCE +
-                "://" + context.getResources().getResourcePackageName(drawableId) +
-                '/' + context.getResources().getResourceTypeName(drawableId) +
-                '/' + context.getResources().getResourceEntryName(drawableId)
-        );
-    }
-
 
     public static ArrayList<Person> getList(){
         return list;

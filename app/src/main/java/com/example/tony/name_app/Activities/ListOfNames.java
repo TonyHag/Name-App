@@ -1,4 +1,4 @@
-package com.example.tony.name_app;
+package com.example.tony.name_app.Activities;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
@@ -7,7 +7,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -17,10 +16,13 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 
+import com.example.tony.name_app.Person;
+import com.example.tony.name_app.R;
+
 import java.util.ArrayList;
 
-import static com.example.tony.name_app.CatList.findBitmapFromName;
-import static com.example.tony.name_app.CatList.getList;
+import static com.example.tony.name_app.LocalDatabase.findBitmapFromName;
+import static com.example.tony.name_app.LocalDatabase.getList;
 
 
 public class ListOfNames extends AppCompatActivity {

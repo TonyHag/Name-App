@@ -1,4 +1,4 @@
-package com.example.tony.name_app;
+package com.example.tony.name_app.Activities;
 
 import android.app.Activity;
 import android.content.Context;
@@ -6,11 +6,7 @@ import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.Environment;
 import android.preference.PreferenceManager;
-import android.provider.MediaStore;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,23 +15,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.example.tony.name_app.R;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.prefs.Preferences;
 
 
-import static android.R.attr.content;
-import static com.example.tony.name_app.CatList.addPersonToList;
+import static com.example.tony.name_app.LocalDatabase.addPersonToList;
 
-public class addPerson extends AppCompatActivity {
+public class AddPerson extends AppCompatActivity {
     private static final int CAMERA_REQUEST = 1888;
     private ImageView imageView;
     TextView textTargetUri;

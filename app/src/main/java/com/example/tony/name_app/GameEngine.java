@@ -2,16 +2,15 @@ package com.example.tony.name_app;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.view.Gravity;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-import static com.example.tony.name_app.CatList.getList;
+import static com.example.tony.name_app.LocalDatabase.getList;
 
-public class LearningModeController {
+public class GameEngine {
     Context context;
 
     Integer score;
@@ -25,10 +24,10 @@ public class LearningModeController {
 
     final ArrayList<Person> list;
 
-    public LearningModeController(Context context) {
-        this.context = context;
+    public GameEngine(Context context) {
         this.score = 0;
         this.attempts = 0;
+        this.context = context;
 
         list = getList();
     }
@@ -56,5 +55,17 @@ public class LearningModeController {
         person = list.get(randomNumber);
         correctName = person.getName();
         bitmap = person.getBitmap();
+    }
+
+    public Integer getAttempts() {
+        return attempts;
+    }
+
+    public Integer getScore() {
+        return score;
+    }
+
+    public Bitmap getBitmap() {
+        return bitmap;
     }
 }

@@ -1,20 +1,18 @@
-package com.example.tony.name_app;
+package com.example.tony.name_app.Activities;
 
 import android.content.Intent;
-import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import java.util.ArrayList;
+import com.example.tony.name_app.R;
 
-import static com.example.tony.name_app.CatList.initialize;
+import static com.example.tony.name_app.LocalDatabase.initialize;
 
 
 public class MainActivity extends AppCompatActivity {
-    ArrayList<Person> persons = new ArrayList<Person>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,14 +23,13 @@ public class MainActivity extends AppCompatActivity {
 
         initialize(this);
     }
-    // create an action bar button
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
-    // handle button activities
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -47,19 +44,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void startListOfNames(View view) {
         Intent intent = new Intent(this, ListOfNames.class);
-
-        //intent.putParcelableArrayListExtra("persons", persons);
-
         startActivity(intent);
     }
 
     public void startQuiz(View view){
-        Intent intent = new Intent(this, Quiz.class);
+        Intent intent = new Intent(this, LearningMode.class);
         startActivity(intent);
     }
 
     public void startaddPerson(View view){
-        Intent intent = new Intent(this, addPerson.class);
+        Intent intent = new Intent(this, AddPerson.class);
         startActivity(intent);
     }
 
