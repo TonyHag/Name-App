@@ -71,50 +71,10 @@ public class AddPerson extends AppCompatActivity {
             photo = (Bitmap) data.getExtras().get("data");
 
             imageView.setImageBitmap(photo);
-
-
-            //lager metode for å lagre til internal storage og legge filepath til shared preferences
-           String path = saveToInternalStorage(photo);
-           Log.d("MyActivity",path);
-
-            //Might be bollshit below this point
-            SharedPreferences shre = PreferenceManager.getDefaultSharedPreferences(this);
-            SharedPreferences.Editor edit=shre.edit();
-            edit.putString(path,"Nils");
-            edit.commit();
-            String n =  Boolean.toString(shre.contains(path));
-
-            Log.d("PISSINASS", n );
-
-
-
-
         }
     }
 
-    private String saveToInternalStorage(Bitmap bitmapImage){
-        ContextWrapper cw = new ContextWrapper(getApplicationContext());
-        // path to /data/data/yourapp/app_data/imageDir
-        File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
-        // Create imageDir
-        File mypath=new File(directory,"profile.jpg");
 
-        FileOutputStream fos = null;
-        try {
-            fos = new FileOutputStream(mypath);
-            // Use the compress method on the BitMap object to write image to the OutputStream
-            bitmapImage.compress(Bitmap.CompressFormat.PNG, 100, fos);
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                fos.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return directory.getAbsolutePath();
-    }
 
 
 }
