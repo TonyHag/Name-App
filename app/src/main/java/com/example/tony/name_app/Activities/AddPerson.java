@@ -57,7 +57,6 @@ public class AddPerson extends AppCompatActivity {
     public void add(View view) {
         EditText mEdit = (EditText)findViewById(R.id.name_input);
         String name = mEdit.getText().toString();
-        //Person person = new Person(name, null, photo);
         addPersonToList(name, photo);
         finish();
     }
