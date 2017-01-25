@@ -22,8 +22,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         setTitle("Name App");
-        ActionBar ab = getSupportActionBar();
-        ab.setIcon(ic_menu_add);
 
         LocalDatabase.initialize(this);
     }
