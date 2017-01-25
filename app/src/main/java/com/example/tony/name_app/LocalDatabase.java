@@ -9,9 +9,6 @@ import android.provider.MediaStore;
 
 import java.util.ArrayList;
 
-/**
- * Created by nataniel on 19.01.2017.
- */
 
 public class LocalDatabase {
 

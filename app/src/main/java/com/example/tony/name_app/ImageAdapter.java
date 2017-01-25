@@ -9,9 +9,7 @@ import android.widget.ImageView;
 
 import java.util.ArrayList;
 
-/**
- * Created by nataniel on 23.01.2017.
- */
+
 
 public class ImageAdapter extends ArrayAdapter<Person> {
     private Context context;
