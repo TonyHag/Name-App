@@ -17,9 +17,13 @@ public class Person {
         this.bitmap = bitmap;
     }
 
-    public Bitmap getBitmap() {return bitmap;}
+    public Bitmap getBitmap() {
+        return bitmap;
+    }
 
-    public void setBitmap(Bitmap bitmap) {this.bitmap = bitmap;}
+    public void setBitmap(Bitmap bitmap) {
+        this.bitmap = bitmap;
+    }
 
     public String getName() {
         return name;
