@@ -1,9 +1,6 @@
 package com.example.tony.name_app;
 
 import android.graphics.Bitmap;
-import android.net.Uri;
-import android.os.Parcelable;
-import android.os.Parcel;
 
 
 public class Person {
