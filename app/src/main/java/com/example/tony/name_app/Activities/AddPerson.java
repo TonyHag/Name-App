@@ -61,7 +61,6 @@ public class AddPerson extends AppCompatActivity {
         finish();
     }
 
-    static final int REQUEST_IMAGE_CAPTURE = 1;
 
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

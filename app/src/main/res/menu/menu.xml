@@ -2,9 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item
+ <!--   <item
         android:id="@+id/button_goto_add_person"
         android:title="@string/button_add_person"
-        android:icon="@drawable/naty" />
+         />-->
+
+    <item
+        android:id="@+id/add" android:icon="@android:drawable/ic_menu_add" app:showAsAction="always"
+        android:title="Add person"/>
 
 </menu>
