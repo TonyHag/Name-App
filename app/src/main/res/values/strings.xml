@@ -30,4 +30,8 @@
     <string name="edit_text_name_hint">Enter name</string>
     <string name="button_add_new">Add new</string>
 
+    <!-- Add Owner activity -->
+    <string name="button_add_owner">Add owner</string>
+    <string name="edit_text_owner_hint">Enter your name</string>
+
 </resources>
