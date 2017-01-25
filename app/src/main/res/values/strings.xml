@@ -1,14 +1,33 @@
 <resources>
     <string name="app_name">Name-App</string>
-    <string name="button_listOfNames">List of Names</string>
-    <string name="button_pictureGallery">Picture Gallery</string>
-    <string name="button_learningMode">Learning Mode</string>
 
-    <string name="button_start">Start</string>
-    <string name="button_add">Add</string>
-    <string name="take_pic">Take picture</string>
-    <string name="addperson_text">Enter name</string>
+    <!-- Titles -->
+    <string name="title_activity_main">Name App</string>
+    <string name="title_activity_list_of_names">List of names</string>
     <string name="title_activity_gallery">Gallery</string>
+    <string name="title_activity_learning_mode">Learning mode</string>
     <string name="title_activity_view_picture">ViewPicture</string>
-    <string name="addNew">Add new</string>
+
+    <!-- Main activity -->
+    <string name="button_list_of_names">List of Names</string>
+    <string name="button_gallery">Picture Gallery</string>
+    <string name="button_learning_mode">Learning Mode</string>
+
+    <!-- List of names activity -->
+
+    <!-- Gallery activity -->
+
+    <!-- Learning mode activity -->
+    <string name="button_answer">Answer</string>
+    <string name="edit_text_answer_hint">Name</string>
+    <string name="right_answer">Right answer</string>
+    <string name="wrong_answer">Wrong answer</string>
+
+    <!-- Add person activity -->
+    <string name="button_start">Start</string>
+    <string name="button_add_person">Add Person</string>
+    <string name="button_take_picture">Take picture</string>
+    <string name="edit_text_name_hint">Enter name</string>
+    <string name="button_add_new">Add new</string>
+
 </resources>

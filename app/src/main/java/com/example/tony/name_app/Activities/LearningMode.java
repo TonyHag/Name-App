@@ -1,5 +1,6 @@
-package com.example.tony.name_app;
+package com.example.tony.name_app.Activities;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -7,19 +8,27 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+import com.example.tony.name_app.GameEngine;
+import com.example.tony.name_app.R;
 
-public class Quiz extends AppCompatActivity {
-    LearningModeController game;
+import static com.example.tony.name_app.LocalDatabase.getList;
+
+public class LearningMode extends AppCompatActivity {
+    GameEngine game;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz);
+        setContentView(R.layout.activity_learning_mode);
 
-        game = new LearningModeController(this);
+        setTitle("Learning mode");
 
-        if (game.list.size() > 0) {
+        ActionBar ab = getSupportActionBar();
+        ab.setDisplayHomeAsUpEnabled(true);
+
+        game = new GameEngine(this);
+
+        if (getList().size() > 0) {
             game.nextPicture();
             updatePicture();
             updateScore();
@@ -41,11 +50,11 @@ public class Quiz extends AppCompatActivity {
 
     public void updatePicture() {
         final ImageView imgview = (ImageView) findViewById(R.id.imageView);
-        imgview.setImageBitmap(game.bitmap);
+        imgview.setImageBitmap(game.getBitmap());
     }
 
     public void updateScore() {
-        String scoreAndAttempts = game.score + "/" + game.attempts;
+        String scoreAndAttempts = game.getScore() + "/" + game.getAttempts();
 
         TextView score = (TextView) findViewById(R.id.score);
         score.setText(scoreAndAttempts);

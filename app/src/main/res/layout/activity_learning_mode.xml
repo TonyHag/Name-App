@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.example.tony.name_app.MainActivity">
+    tools:context="com.example.tony.name_app.Activities.MainActivity">
 
     <ImageView
         android:layout_gravity="center_horizontal"
@@ -40,15 +40,15 @@
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:hint="Navn" />
+            android:hint="@string/edit_text_answer_hint" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Svar"
+            android:text="@string/button_answer"
             android:onClick="sendAnswer" />
-    </LinearLayout>
 
+    </LinearLayout>
 </LinearLayout>
 
 
