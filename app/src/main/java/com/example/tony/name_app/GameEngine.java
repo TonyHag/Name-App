@@ -19,6 +19,7 @@ public class GameEngine {
     Person person;
     String correctName;
     Bitmap bitmap;
+    int previousNumber;
 
     final ArrayList<Person> list;
 
@@ -47,8 +48,8 @@ public class GameEngine {
     }
 
     public void nextPicture() {
-        Random r = new Random(System.currentTimeMillis());
-        randomNumber = r.nextInt(list.size());
+
+        randomNumber = generateRandom();
 
         person = list.get(randomNumber);
         correctName = person.getName();
@@ -66,4 +67,17 @@ public class GameEngine {
     public Bitmap getBitmap() {
         return bitmap;
     }
+
+
+
+private int generateRandom() {
+    Random r = new Random(System.currentTimeMillis());
+    while (true) {
+        int randomNumber = r.nextInt(list.size());
+        if (randomNumber != previousNumber) {
+            previousNumber = randomNumber;
+            return randomNumber;
+        }
+    }
+}
 }
