@@ -36,7 +36,7 @@ import static org.hamcrest.Matchers.isA;
  * Created by kimhe on 25.01.2017.
  */
 @RunWith(AndroidJUnit4.class)
-public class TestLearningMode {
+public class LearningModeTest {
     @Rule
     public final ActivityTestRule<LearningMode> mActivityRule =
             new ActivityTestRule<>(LearningMode.class, true, false);
