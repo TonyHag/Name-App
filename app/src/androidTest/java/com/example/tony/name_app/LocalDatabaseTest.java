@@ -15,8 +15,7 @@ public class LocalDatabaseTest {
 
     @Test
     public void addPersonToList() throws Exception {
-
-    }
+            }
 
     @Test
     public void findBitmapFromName() throws Exception {
