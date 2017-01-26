@@ -6,6 +6,8 @@ import android.graphics.BitmapFactory;
 
 import java.util.ArrayList;
 
+import static android.R.attr.bitmap;
+
 
 public class LocalDatabase {
 
@@ -43,6 +45,12 @@ public class LocalDatabase {
                 return cat.getBitmap();
             }
         }
+        return null;
+    }
+    public static Bitmap getImagefromStorage() {
+
+
+
         return null;
     }
 

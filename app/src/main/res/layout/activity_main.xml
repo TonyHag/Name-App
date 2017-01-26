@@ -32,4 +32,6 @@
         android:onClick="startLearningMode"
         android:layout_weight="1" />
 
+
+
 </LinearLayout>
