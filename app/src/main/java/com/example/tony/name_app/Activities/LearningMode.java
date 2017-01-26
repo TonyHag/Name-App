@@ -37,7 +37,7 @@ public class LearningMode extends AppCompatActivity {
     }
 
     public void sendAnswer(View view) {
-        EditText editText = (EditText) findViewById(R.id.edit_message);
+        EditText editText = (EditText) findViewById(R.id.answer);
         String message = editText.getText().toString();
         editText.setText("");
 
