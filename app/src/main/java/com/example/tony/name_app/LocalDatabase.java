@@ -47,11 +47,6 @@ public class LocalDatabase {
         }
         return null;
     }
-    public static Bitmap getImagefromStorage() {
 
-
-
-        return null;
-    }
 
 }
