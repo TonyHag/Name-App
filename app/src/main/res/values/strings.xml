@@ -13,6 +13,7 @@
     <string name="button_gallery">Picture Gallery</string>
     <string name="button_learning_mode">Learning Mode</string>
 
+
     <!-- List of names activity -->
 
     <!-- Gallery activity -->
@@ -29,5 +30,10 @@
     <string name="button_take_picture">Take picture</string>
     <string name="edit_text_name_hint">Enter name</string>
     <string name="button_add_new">Add new</string>
+    <string name="button_select">Select Picture</string>
+
+    <!-- Add Owner activity -->
+    <string name="button_add_owner">Add owner</string>
+    <string name="edit_text_owner_hint">Enter your name</string>
 
 </resources>

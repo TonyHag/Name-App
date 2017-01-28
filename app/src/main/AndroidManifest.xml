@@ -19,50 +19,45 @@
             android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".Activities.LearningMode"
-            android:parentActivityName=".Activities.MainActivity" >
-
+            android:parentActivityName=".Activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activities.MainActivity">
-            </meta-data>
+                android:value=".Activities.MainActivity"></meta-data>
         </activity>
-
         <activity
             android:name=".Activities.AddPerson"
-            android:parentActivityName=".Activities.MainActivity" >
-
+            android:parentActivityName=".Activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activities.MainActivity">
-            </meta-data>
+                android:value=".Activities.MainActivity"></meta-data>
         </activity>
-
         <activity
             android:name=".Activities.Gallery"
-            android:parentActivityName=".Activities.MainActivity" >
-
+            android:parentActivityName=".Activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activities.MainActivity">
-            </meta-data>
+                android:value=".Activities.MainActivity"></meta-data>
         </activity>
-
         <activity
             android:name=".Activities.ListOfNames"
-            android:parentActivityName=".Activities.MainActivity" >
-
+            android:parentActivityName=".Activities.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Activities.MainActivity">
-            </meta-data>
+                android:value=".Activities.MainActivity"></meta-data>
         </activity>
-
+        <activity
+            android:name=".Activities.AddOwner"
+            android:parentActivityName=".Activities.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.MainActivity"></meta-data>
+        </activity>
     </application>
 
 </manifest>

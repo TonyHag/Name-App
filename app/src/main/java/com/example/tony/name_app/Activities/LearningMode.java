@@ -1,8 +1,8 @@
 package com.example.tony.name_app.Activities;
 
+import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -37,7 +37,7 @@ public class LearningMode extends AppCompatActivity {
     }
 
     public void sendAnswer(View view) {
-        EditText editText = (EditText) findViewById(R.id.edit_message);
+        EditText editText = (EditText) findViewById(R.id.answer);
         String message = editText.getText().toString();
         editText.setText("");
 

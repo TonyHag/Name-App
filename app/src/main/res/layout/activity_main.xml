@@ -22,14 +22,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_gallery"
-        android:onClick="gotoGallery"
+        android:onClick="startGallery"
         android:layout_weight="1" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/button_learning_mode"
-        android:onClick="startQuiz"
+        android:onClick="startLearningMode"
         android:layout_weight="1" />
+
+
 
 </LinearLayout>

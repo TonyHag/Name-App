@@ -6,7 +6,9 @@ import android.content.ContextWrapper;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.preference.PreferenceManager;
+import android.provider.MediaStore;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -31,7 +33,7 @@ public class AddPerson extends AppCompatActivity {
     private ImageView imageView;
     TextView textTargetUri;
     Bitmap photo;
-
+    private static final int SELECT_PICTURE = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,69 +54,52 @@ public class AddPerson extends AppCompatActivity {
                 startActivityForResult(cameraIntent, CAMERA_REQUEST);
             }
         });
+        findViewById(R.id.button_select).setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View view) {
+
+                Intent intent = new Intent();
+                intent.setType("image/*");
+                intent.setAction(Intent.ACTION_GET_CONTENT);
+                startActivityForResult(Intent.createChooser(intent,"Select Picture"), SELECT_PICTURE);
+            }
+        });
+
     }
 
     public void add(View view) {
         EditText mEdit = (EditText)findViewById(R.id.name_input);
         String name = mEdit.getText().toString();
-        //Person person = new Person(name, null, photo);
         addPersonToList(name, photo);
         finish();
     }
 
-    static final int REQUEST_IMAGE_CAPTURE = 1;
 
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         textTargetUri = (TextView)findViewById(R.id.targeturi);
-        if (requestCode == CAMERA_REQUEST && resultCode == Activity.RESULT_OK) {
-            photo = (Bitmap) data.getExtras().get("data");
+        if(resultCode != RESULT_CANCELED){
 
-            imageView.setImageBitmap(photo);
+            if(requestCode == SELECT_PICTURE){
+                try {
+                    Uri selectedimg = data.getData();
+                    photo = MediaStore.Images.Media.getBitmap(this.getContentResolver(), selectedimg);
+                    imageView.setImageBitmap(photo);
+                }catch (IOException exception){
 
+                }
+            }
 
-            //lager metode for å lagre til internal storage og legge filepath til shared preferences
-           String path = saveToInternalStorage(photo);
-           Log.d("MyActivity",path);
+            if (requestCode == CAMERA_REQUEST ) {
+                photo = (Bitmap) data.getExtras().get("data");
 
-            //Might be bollshit below this point
-            SharedPreferences shre = PreferenceManager.getDefaultSharedPreferences(this);
-            SharedPreferences.Editor edit=shre.edit();
-            edit.putString(path,"Nils");
-            edit.commit();
-            String n =  Boolean.toString(shre.contains(path));
-
-            Log.d("PISSINASS", n );
-
-
-
-
-        }
-    }
-
-    private String saveToInternalStorage(Bitmap bitmapImage){
-        ContextWrapper cw = new ContextWrapper(getApplicationContext());
-        // path to /data/data/yourapp/app_data/imageDir
-        File directory = cw.getDir("imageDir", Context.MODE_PRIVATE);
-        // Create imageDir
-        File mypath=new File(directory,"profile.jpg");
-
-        FileOutputStream fos = null;
-        try {
-            fos = new FileOutputStream(mypath);
-            // Use the compress method on the BitMap object to write image to the OutputStream
-            bitmapImage.compress(Bitmap.CompressFormat.PNG, 100, fos);
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                fos.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+                imageView.setImageBitmap(photo);
             }
         }
-        return directory.getAbsolutePath();
     }
+
+
+
 
 
 }

@@ -1,13 +1,12 @@
 package com.example.tony.name_app;
 
-import android.content.ContentResolver;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.provider.MediaStore;
 
 import java.util.ArrayList;
+
+import static android.R.attr.bitmap;
 
 
 public class LocalDatabase {
@@ -48,5 +47,6 @@ public class LocalDatabase {
         }
         return null;
     }
+
 
 }

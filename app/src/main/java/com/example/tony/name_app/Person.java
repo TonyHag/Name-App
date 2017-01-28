@@ -1,9 +1,6 @@
 package com.example.tony.name_app;
 
 import android.graphics.Bitmap;
-import android.net.Uri;
-import android.os.Parcelable;
-import android.os.Parcel;
 
 
 public class Person {
@@ -20,9 +17,13 @@ public class Person {
         this.bitmap = bitmap;
     }
 
-    public Bitmap getBitmap() {return bitmap;}
+    public Bitmap getBitmap() {
+        return bitmap;
+    }
 
-    public void setBitmap(Bitmap bitmap) {this.bitmap = bitmap;}
+    public void setBitmap(Bitmap bitmap) {
+        this.bitmap = bitmap;
+    }
 
     public String getName() {
         return name;

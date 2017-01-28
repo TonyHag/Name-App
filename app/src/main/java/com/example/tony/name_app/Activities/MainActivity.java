@@ -1,14 +1,18 @@
 package com.example.tony.name_app.Activities;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.tony.name_app.LocalDatabase;
 import com.example.tony.name_app.R;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,10 +20,24 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         setTitle("Name App");
 
         LocalDatabase.initialize(this);
+
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = pref.edit();
+
+        //editor.clear();
+        //editor.commit();
+
+        if (!pref.contains("profile_name")) {
+            Intent intent = new Intent(this, AddOwner.class);
+            startActivity(intent);
+        } else {
+            String name = pref.getString("profile_name", "DEFAULT");
+            Toast toast = Toast.makeText(this, "Welcome back " + name + "!", Toast.LENGTH_SHORT);
+            toast.show();
+        }
     }
 
     @Override
@@ -32,11 +50,12 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        View viewview = findViewById(R.id.activity_add_person);
+        View viewAddPerson = findViewById(R.id.activity_add_person);
 
-        if (id == R.id.button_goto_add_person) {
-            startaddPerson(viewview);
+        if (id == R.id.add) {
+            startAddPerson(viewAddPerson);
         }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -45,17 +64,17 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void startQuiz(View view){
+    public void startLearningMode(View view){
         Intent intent = new Intent(this, LearningMode.class);
         startActivity(intent);
     }
 
-    public void startaddPerson(View view){
+    public void startAddPerson(View view){
         Intent intent = new Intent(this, AddPerson.class);
         startActivity(intent);
     }
 
-    public void gotoGallery(View view){
+    public void startGallery(View view){
         Intent intent = new Intent(this, Gallery.class);
         startActivity(intent);
     }
